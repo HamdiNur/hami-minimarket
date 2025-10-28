@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍎Hami MiniMarket - Fresh Fruits & Vegetables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🍎 Hami <span>MiniMarket</span></h1>
+                </div>
+                  <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+                <nav class="nav" id="nav-menu">
+                    <a href="#home">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slide active">
+                <img src="images/fresh.jpg?height=600&width=1200" alt="Fresh Fruits">
+                <div class="slide-content">
+                    <h2>Fresh Fruits Daily</h2>
+                    <p>Handpicked quality fruits delivered to your door</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/organic vegt.jpg?height=600&width=1200" alt="Organic Vegetables">
+                <div class="slide-content">
+                    <h2>Organic Vegetables</h2>
+                    <p>Farm-fresh vegetables for healthy living</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/visit.jpg?height=600&width=1200" alt="Our Store">
+                <div class="slide-content">
+                    <h2>Visit Our Store</h2>
+                    <p>Experience quality and freshness in person</p>
+                </div>
+            </div>
+       
+            
+            <!-- Slider Controls -->
+            <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+            
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Fresh Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/images.jpeg" alt="Apples">
+                    <h3>Fresh Apples</h3>
+                    <p class="price">$3.99/kg</p>
+                    <p>Crisp and sweet, perfect for snacking</p>
+                </div>
+                <div class="product-card">
+                    <img src="/images/banan1.jpeg" alt="Bananas">
+                    <h3>Bananas</h3>
+                    <p class="price">$2.49/kg</p>
+                    <p>Rich in potassium and energy</p>
+                </div>
+                <div class="product-card">
+                    <img src="/images/tamato2.jpeg" alt="Tomatoes">
+                    <h3>Tomatoes</h3>
+                    <p class="price">$4.99/kg</p>
+                    <p>Juicy and flavorful, locally grown</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/carrot1.jpeg" alt="Carrots">
+                    <h3>Carrots</h3>
+                    <p class="price">$2.99/kg</p>
+                    <p>Crunchy and nutritious</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/orangetwo.jpeg" alt="Oranges">
+                    <h3>Oranges</h3>
+                    <p class="price">$4.49/kg</p>
+                    <p>Vitamin C packed citrus delight</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/lettuce.jpeg" alt="Lettuce">
+                    <h3>Lettuce</h3>
+                    <p class="price">$1.99/head</p>
+                    <p>Fresh and crispy for salads</p>
+                </div>
+                <div class="product-card">
+                    <img src="/images/strawoberrie.jpeg" alt="Strawberries">
+                    <h3>Strawberries</h3>
+                    <p class="price">$5.99/box</p>
+                    <p>Sweet and juicy berries</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/brockli.jpeg" alt="Broccoli">
+                    <h3>Broccoli</h3>
+                    <p class="price">$3.49/kg</p>
+                    <p>Healthy green superfood</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Hami MiniMarket</h2>
+                    <p>Welcome to Hami MiniMarket, your trusted source for fresh fruits and vegetables since 2024. We are committed to bringing you the highest quality produce directly from local farms to your table.</p>
+                    <p>Our mission is to promote healthy living by providing fresh, organic, and affordable fruits and vegetables to our community. Every product is carefully selected and inspected to ensure you get nothing but the best.</p>
+                    <p>We believe in supporting local farmers and sustainable agriculture practices. When you shop with us, you're not just getting fresh produce – you're supporting a healthier community and environment.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/images/about.png" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <input type="text" id="address" name="address" required>
+                    <span class="error-message" id="addressError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="success-message" id="successMessage">Thank you! Your message has been sent successfully.</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hami MiniMarket</h3>
+                    <p>Your trusted source for fresh fruits and vegetables</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+              <div class="footer-section">
+  <h3>Follow Us</h3>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hami MiniMarket. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
