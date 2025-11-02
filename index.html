@@ -24,6 +24,11 @@
                     <a href="#products">Products</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
+                    <!-- Added cart icon with counter badge -->
+                    <a href="#products" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
                 </nav>
             </div>
         </div>
@@ -73,57 +78,133 @@
     <section id="products" class="products">
         <div class="container">
             <h2 class="section-title">Our Fresh Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="images/images.jpeg" alt="Apples">
-                    <h3>Fresh Apples</h3>
-                    <p class="price">$3.99/kg</p>
-                    <p>Crisp and sweet, perfect for snacking</p>
+            
+            <!-- Added search and filter controls -->
+            <div class="filter-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search products...">
                 </div>
-                <div class="product-card">
-                    <img src="/images/banan1.jpeg" alt="Bananas">
-                    <h3>Bananas</h3>
-                    <p class="price">$2.49/kg</p>
-                    <p>Rich in potassium and energy</p>
+                
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="fruit">Fruits</button>
+                    <button class="filter-btn" data-category="vegetable">Vegetables</button>
                 </div>
-                <div class="product-card">
-                    <img src="/images/tamato2.jpeg" alt="Tomatoes">
-                    <h3>Tomatoes</h3>
-                    <p class="price">$4.99/kg</p>
-                    <p>Juicy and flavorful, locally grown</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/carrot1.jpeg" alt="Carrots">
-                    <h3>Carrots</h3>
-                    <p class="price">$2.99/kg</p>
-                    <p>Crunchy and nutritious</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/orangetwo.jpeg" alt="Oranges">
-                    <h3>Oranges</h3>
-                    <p class="price">$4.49/kg</p>
-                    <p>Vitamin C packed citrus delight</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/lettuce.jpeg" alt="Lettuce">
-                    <h3>Lettuce</h3>
-                    <p class="price">$1.99/head</p>
-                    <p>Fresh and crispy for salads</p>
-                </div>
-                <div class="product-card">
-                    <img src="/images/strawoberrie.jpeg" alt="Strawberries">
-                    <h3>Strawberries</h3>
-                    <p class="price">$5.99/box</p>
-                    <p>Sweet and juicy berries</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/brockli.jpeg" alt="Broccoli">
-                    <h3>Broccoli</h3>
-                    <p class="price">$3.49/kg</p>
-                    <p>Healthy green superfood</p>
+                
+                <div class="price-filter">
+                    <label for="priceRange">Max Price: $<span id="priceValue">10</span></label>
+                    <input type="range" id="priceRange" min="0" max="10" value="10" step="0.5">
                 </div>
             </div>
-        </div>
+
+            <!-- Added data attributes and Add to Cart buttons to products -->
+           <div class="product-grid" id="productGrid">
+  <div class="product-card" data-category="fruit" data-price="3.99" data-name="Fresh Apples">
+    <img src="images/images.jpeg" alt="Apples">
+    <h3>Fresh Apples</h3>
+    <p class="price">$3.99/kg</p>
+    <p class="category-tag">Fruit</p>
+    <p>Crisp and sweet, perfect for snacking</p>
+    <div class="cart-control" data-product="Fresh Apples">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="fruit" data-price="2.49" data-name="Bananas">
+    <img src="/images/banan1.jpeg" alt="Bananas">
+    <h3>Bananas</h3>
+    <p class="price">$2.49/kg</p>
+    <p class="category-tag">Fruit</p>
+    <p>Rich in potassium and energy</p>
+    <div class="cart-control" data-product="Bananas">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="vegetable" data-price="4.99" data-name="Tomatoes">
+    <img src="/images/tamato2.jpeg" alt="Tomatoes">
+    <h3>Tomatoes</h3>
+    <p class="price">$4.99/kg</p>
+    <p class="category-tag">Vegetable</p>
+    <p>Juicy and flavorful, locally grown</p>
+    <div class="cart-control" data-product="Tomatoes">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="vegetable" data-price="2.99" data-name="Carrots">
+    <img src="images/carrot1.jpeg" alt="Carrots">
+    <h3>Carrots</h3>
+    <p class="price">$2.99/kg</p>
+    <p class="category-tag">Vegetable</p>
+    <p>Crunchy and nutritious</p>
+    <div class="cart-control" data-product="Carrots">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="fruit" data-price="5.49" data-name="Oranges">
+    <img src="images/orangetwo.jpeg" alt="Oranges">
+    <h3>Oranges</h3>
+    <p class="price">$5.49/kg</p>
+    <p class="category-tag">Fruit</p>
+    <p>Vitamin C packed citrus delight</p>
+    <div class="cart-control" data-product="Oranges">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="vegetable" data-price="6.99" data-name="Lettuce">
+    <img src="images/lettuce.jpeg" alt="Lettuce">
+    <h3>Lettuce</h3>
+    <p class="price">$6.99/head</p>
+    <p class="category-tag">Vegetable</p>
+    <p>Fresh and crispy for salads</p>
+    <div class="cart-control" data-product="Lettuce">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="fruit" data-price="5.99" data-name="Strawberries">
+    <img src="/images/strawoberrie.jpeg" alt="Strawberries">
+    <h3>Strawberries</h3>
+    <p class="price">$5.99/box</p>
+    <p class="category-tag">Fruit</p>
+    <p>Sweet and juicy berries</p>
+    <div class="cart-control" data-product="Strawberries">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-category="vegetable" data-price="3.49" data-name="Broccoli">
+    <img src="images/brockli.jpeg" alt="Broccoli">
+    <h3>Broccoli</h3>
+    <p class="price">$3.49/kg</p>
+    <p class="category-tag">Vegetable</p>
+    <p>Healthy green superfood</p>
+    <div class="cart-control" data-product="Broccoli">
+      <button class="cart-minus">-</button>
+      <span class="cart-quantity">0</span>
+      <button class="cart-plus">+</button>
+    </div>
+  </div>
+</div>
+
     </section>
 
     <!-- About Section -->
