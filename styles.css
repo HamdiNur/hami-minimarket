@@ -362,7 +362,6 @@ body {
 /* Added category tag and Add to Cart button styles */
 .category-tag {
   display: inline-block;
-  /* background-color: #2e8b57; */
   color: #2e8b57;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
