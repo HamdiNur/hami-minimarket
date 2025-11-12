@@ -638,6 +638,24 @@ body {
 .back-to-top:hover {
   background-color: #ff9800;
 }
+/* Add to product-card in existing styles */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #2d5016;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #1f3810;
+}
+
 
 /* === MOBILE NAV WITH SLIDE ANIMATION === */
 @media (max-width: 768px) {
